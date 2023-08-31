@@ -1,5 +1,7 @@
 package studio0;
 
+import java.text.DecimalFormat;
+
 public class LunchReceipt {
 
 	public static void main(String[] args) {
@@ -14,7 +16,11 @@ public class LunchReceipt {
 		double taxAmount = subtotal * taxRate;
 		double total = subtotal + taxAmount;
 		
-		System.out.println("Your total was: $" + total);
+		DecimalFormat df = new DecimalFormat();
+		df.setMaximumFractionDigits(2);
+		
+		System.out.print("Your total was: $");
+		System.out.println(df.format(total));
 	}
 	
 	
